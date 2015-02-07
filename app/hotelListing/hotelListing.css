@@ -1,0 +1,15 @@
+#results li {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#results li.hover {
+    background: rgba(200, 200, 200, 0.5);
+}
+
+#results li img {
+    height: 50px;
+    display: block;
+    float: left;
+    padding-right: 5px;
+}
