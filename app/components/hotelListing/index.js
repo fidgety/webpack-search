@@ -1,19 +1,14 @@
 var React = require('react');
 require('./hotelListing.css');
 
+var store = require('../../store');
+
 module.exports = React.createClass({
-    getInitialState: function () {
-        return {
-            hovering: false
-        }
+    __mouseOver: function () {
+        store.hotelHovered(this.props.hotel);
     },
-    __mouseOver: function (e) {
-        e.stopPropagation();
-        this.props.onHoverOverHotel(this.props.hotel);
-    },
-    __mouseOut: function (e) {
-        e.stopPropagation();
-        this.props.onHoverOverHotel({});
+    __mouseOut: function () {
+        store.hotelHovered({});
     },
     render: function () {
         var hotel = this.props.hotel;

@@ -1,4 +1,5 @@
 var React = require('react');
+var store = require('../../store');
 
 module.exports = function(lat, lng, map, content, hoverEvent) {
     var bounds = new google.maps.LatLng(lat, lng);

@@ -6,7 +6,7 @@ module.exports = React.createClass({
     render: function () {
         var that = this;
         var hotelListings = this.props.hotels.map(function (hotel) {
-            return (<HotelListing key={hotel.id} hotel={hotel} map={that.props.map}  hoveredHotel={that.props.hoveredHotel} onHoverOverHotel={that.props.onHoverOverHotel}></HotelListing>)
+            return (<HotelListing key={hotel.id} hotel={hotel} map={that.props.map} hoveredHotel={that.props.hoveredHotel}></HotelListing>)
         });
         return (
             <ul id="results">

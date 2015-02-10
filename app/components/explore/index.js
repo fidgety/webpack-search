@@ -13,7 +13,8 @@ module.exports = React.createClass({
         var that = this;
         store.registerListner(function (store) {
             that.setState({
-                hotels: store.hotels
+                hotels: store.hotels,
+                hoveredHotel: store.selectedHotel
             });
         });
     },
@@ -26,8 +27,8 @@ module.exports = React.createClass({
     render: function () {
         return (
             <div id="outer">
-                <Map hotels={this.state.hotels} hoveredHotel={this.state.hoveredHotel} onHoverOverHotel={this.onHoverOverHotel}></Map>
-                <HotelList hotels={this.state.hotels} hoveredHotel={this.state.hoveredHotel} onHoverOverHotel={this.onHoverOverHotel}></HotelList>
+                <Map hotels={this.state.hotels} hoveredHotel={this.state.hoveredHotel}></Map>
+                <HotelList hotels={this.state.hotels} hoveredHotel={this.state.hoveredHotel}></HotelList>
             </div>
         );
     }

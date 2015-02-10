@@ -36,7 +36,7 @@ module.exports = React.createClass({
     render: function () {
         var that = this;
         var markers = this.props.hotels.map(function (hotel) {
-            return <HotelMarker key={hotel.id} hotel={hotel} map={that.state.map} hoveredHotel={that.props.hoveredHotel} onHoverOverHotel={that.props.onHoverOverHotel}></HotelMarker>
+            return <HotelMarker key={hotel.id} hotel={hotel} hoveredHotel={that.props.hoveredHotel} map={that.state.map}></HotelMarker>
         });
         return (<div id="map-canvas">{markers}</div>);
     }
