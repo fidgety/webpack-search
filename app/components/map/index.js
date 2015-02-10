@@ -1,6 +1,7 @@
 var React = require('react');
 require('./map.css');
 var HotelMarker = require('../marker');
+var store = require('../../store');
 
 module.exports = React.createClass({
     getInitialState: function () {
@@ -21,16 +22,14 @@ module.exports = React.createClass({
             map: map
         });
 
-        var onMapUpdate = this.props.onMapUpdate;
-
         google.maps.event.addListenerOnce(map, 'tilesloaded', function () {
-            onMapUpdate(map);
+            store.mapMoved(map);
             google.maps.event.addListener(map, 'dragend', function () {
-                onMapUpdate(map);
+                store.mapMoved(map);
             });
 
             google.maps.event.addListener(map, 'zoom_changed', function () {
-                onMapUpdate(map);
+                store.mapMoved(map);
             });
         });
     },

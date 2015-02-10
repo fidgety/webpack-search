@@ -1,3 +1,4 @@
+var React = require('react');
 
 module.exports = function(lat, lng, map, content, hoverEvent) {
     var bounds = new google.maps.LatLng(lat, lng);
@@ -18,22 +19,20 @@ function CustomOverlay(bounds, map, content, hoverEvent) {
 }
 
 CustomOverlay.prototype.onAdd = function () {
-
-    var div = document.createElement('div');
-    div.style.position = 'absolute';
-
-    div.className = 'happy';
+    var className = 'happy';
 
     if (this.content.guest_rating < 80) {
-        div.className = 'ok';
+        className = 'ok';
     }
     if (this.content.guest_rating < 50) {
-        div.className = 'sad';
+        className = 'sad';
     }
 
-    div.className += ' hotel-marker';
+    var div = document.createElement('div');
+    div.className = className + ' hotel-marker';
 
     div.innerHTML = this.content.price ? '£' + this.content.price.rate.total : 'FULL';
+    div.innerHTML += '<span> | ' + this.content.star_rating + ' star</span>';
 
     var that = this;
 

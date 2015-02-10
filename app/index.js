@@ -1,8 +1,8 @@
-require('./global/reset.css');
-require('./global/setup.css');
+require('./components/global/reset.css');
+require('./components/global/setup.css');
 
 var React = require('react');
-var Explore = require('./explore');
+var Explore = require('./components/explore');
 
 React.render(
     <Explore/>,
