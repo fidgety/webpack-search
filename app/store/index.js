@@ -25,7 +25,6 @@ module.exports = {
         this.listner(store);
     },
     hotelHovered: function (hotel) {
-        console.log(this);
         store.selectedHotel = hotel;
         this.triggerEvent();
     },
