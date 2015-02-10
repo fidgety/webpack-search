@@ -1,6 +1,8 @@
 module.exports = {
-    listner: function () {
-
+    listner: function () {},
+    store: {
+        hotels: [],
+        selectedHotel: null
     },
     mapMoved: function (map) {
         var maxlat = map.getBounds().getNorthEast().lat();
@@ -13,7 +15,8 @@ module.exports = {
         var searchQuery = 'http://localhost:3004/search/map/' + maxlat + '/' + maxlng + '/' + minlat + '/' + minlng;
         console.log(searchQuery);
         $.get(searchQuery).then(function (searchResults) {
-            that.listner(searchResults.results);
+            that.store.hotels = searchResults.results;
+            that.listner(that.store);
         });
     },
     registerListner: function (callback) {

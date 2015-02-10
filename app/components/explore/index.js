@@ -11,9 +11,9 @@ module.exports = React.createClass({
     },
     componentDidMount: function () {
         var that = this;
-        store.registerListner(function (hotels) {
+        store.registerListner(function (store) {
             that.setState({
-                hotels: hotels
+                hotels: store.hotels
             });
         });
     },
