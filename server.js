@@ -10,7 +10,7 @@ app.get('/search/map/:maxlat/:maxlng/:minlat/:minlng', function (req, res) {
     rp.get({
         url: 'https://api.laterooms.com/search/map/max/' + req.params.maxlat + ',' + req.params.maxlng + '/min/' + req.params.minlat + ',' + req.params.minlng + '/',
         headers: {
-            'TLRG-AppId': '115FBB02-6F90-4310-896F-EAB860EBB1BF'
+            'TLRG-AppId': 'NOPE'
         },
         json: true
     })
